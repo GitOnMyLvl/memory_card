@@ -1,5 +1,6 @@
 import { useEffect } from "react";
 import { useState } from "react";
+import fetchData from "./fetchData";
 
 function Card( { pokemonNumber }){
   const [pokemonName, setPokemonName] = useState("");

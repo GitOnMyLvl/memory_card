@@ -1,8 +1,8 @@
-function Scoreboard( {currentScore, hightScore}) {
+function Scoreboard( {currentScore, highScore}) {
   return (
     <div className="scoreboard">
       <p>Current Score: {currentScore}</p>
-      <p>Highest Score: {hightScore}</p>
+      <p>High Score: {highScore}</p>
     </div>
   );
 }

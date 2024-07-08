@@ -5,10 +5,11 @@ import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faSpinner } from "@fortawesome/free-solid-svg-icons";
 
 
-function Card( { pokemonNumber, onClick }){
+function Card( { pokemonNumber, shuffle }){
   const [pokemonName, setPokemonName] = useState("");
   const [pokemonImage, setPokemonImage] = useState("");
   const [isLoading, setIsLoading] = useState(true);
+  const [isClicked, setIsClicked] = useState(false);
 
   useEffect(() => {
     let ignore = false;
@@ -25,9 +26,17 @@ function Card( { pokemonNumber, onClick }){
     }
   }, [pokemonNumber]);
 
+  function handleClick(){
+    if(isClicked === true) console.log('Game Over');
+    if(isClicked === false){
+      setIsClicked(true);
+    }
+    shuffle();
+  }
+
   return(
     <div className="card">
-      <button type="button" className="clickable-card" onClick={onClick}>
+      <button type="button" className="clickable-card" onClick={handleClick}>
         {isLoading ? (
           <>
             <p>loading</p>

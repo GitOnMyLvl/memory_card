@@ -1,7 +1,7 @@
 function EndScreen ({ restart }) {
   return (
     <div className="game-over-screen">
-      <h2>Game Over</h2>
+      <h1>Game Over</h1>
       <button onClick={restart} className="restart-btn">Restart</button>
     </div>
    ) 

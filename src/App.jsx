@@ -32,7 +32,7 @@ function App() {
   return (
     <>
       <Header toggleInfo={toggleInfo}/>
-      {showInfo && <Info />}
+      {showInfo && <Info toggleInfo={toggleInfo}/>}
       <Scoreboard currentScore={currentScore} highScore={highScore} />
       <GameArea incrementScore={incrementScore} setCurrentScore={setCurrentScore}/>
       <Footer />

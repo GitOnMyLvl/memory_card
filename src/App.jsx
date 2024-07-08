@@ -33,8 +33,10 @@ function App() {
     <>
       <Header toggleInfo={toggleInfo}/>
       {showInfo && <Info toggleInfo={toggleInfo}/>}
-      <Scoreboard currentScore={currentScore} highScore={highScore} />
-      <GameArea incrementScore={incrementScore} setCurrentScore={setCurrentScore}/>
+      <div className='app-container'>
+        <GameArea incrementScore={incrementScore} setCurrentScore={setCurrentScore}/>
+        <Scoreboard currentScore={currentScore} highScore={highScore} />
+      </div>
       <Footer />
     </>
   )

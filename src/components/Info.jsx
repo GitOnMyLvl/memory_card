@@ -8,7 +8,7 @@ function Info({ toggleInfo }) {
           <br />
           If you click on the same Pokemon twice, you lose.
           <br />
-          After you board, a new one with five more cards will appear. <br />
+          After you clear board, a new one with five more cards will appear. <br />
           Have fun and try to get a good high score!
         </p>
         <button className="close-info-btn" onClick={toggleInfo}>Close</button>

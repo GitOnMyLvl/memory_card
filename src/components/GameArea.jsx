@@ -15,12 +15,17 @@ function GameArea() {
     setRandomNumbers(prevNumbers => [...prevNumbers].sort(() => Math.random() - 0.5));
   }
 
+  const reset = () => {
+    const numbers = getRandomUniqueNumbers(1, 1025, 10)
+    setRandomNumbers(numbers);
+  }
+
 
   return (
     
     <div className='card-container'>
       {randomNumber.map((number) => (
-        <Card key={number} pokemonNumber={number} shuffle={shuffleCards}/>
+        <Card key={number} pokemonNumber={number} shuffle={shuffleCards} reset={reset}/>
       ))}
     </div>
   )

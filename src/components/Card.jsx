@@ -4,7 +4,7 @@ import fetchData from "../functions/fetchData";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faSpinner } from "@fortawesome/free-solid-svg-icons";
 
-function Card({ pokemonNumber, shuffle, reset, incrementScore }) {
+function Card({ pokemonNumber, shuffle, incrementScore, handleClickedCards, setGameOver }) {
   const [pokemonData, setPokemonData] = useState("");
   const [isClicked, setIsClicked] = useState(false);
 
@@ -12,7 +12,6 @@ function Card({ pokemonNumber, shuffle, reset, incrementScore }) {
     let ignore = false;
     fetchData(pokemonNumber).then((result) => {
       if (!ignore) {
-        console.log("Fetching data");
         setPokemonData(result);
       }
     });
@@ -23,10 +22,11 @@ function Card({ pokemonNumber, shuffle, reset, incrementScore }) {
 
   function handleReset() {
     setIsClicked(false);
-    reset();
+    setGameOver(true);
   }
 
   function handleClick() {
+    handleClickedCards(pokemonNumber);
     if (isClicked) handleReset();
     else{
       incrementScore();

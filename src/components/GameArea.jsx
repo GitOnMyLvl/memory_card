@@ -1,10 +1,11 @@
 import { useEffect, useState } from 'react';
 import Card from './Card';
-import getRandomUniqueNumbers from './getRandomUniqueNumbers';
+import getRandomUniqueNumbers from '../functions/getRandomUniqueNumbers';
 
 function GameArea() {
 
   const [randomNumber, setRandomNumbers] = useState([]);
+
   useEffect(()=> {
     const numbers = getRandomUniqueNumbers(1, 1025, 10)
     setRandomNumbers(numbers);

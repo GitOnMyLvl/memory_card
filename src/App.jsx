@@ -1,6 +1,5 @@
-import { useEffect, useState } from 'react';
 import GameArea from './components/GameArea';
-import './App.css'
+import './styles/App.css'
 
 function App() {
   

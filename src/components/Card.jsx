@@ -1,11 +1,11 @@
 import { useEffect } from "react";
 import { useState } from "react";
-import fetchData from "./fetchData";
+import fetchData from "../functions/fetchData";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faSpinner } from "@fortawesome/free-solid-svg-icons";
 
 
-function Card( { pokemonNumber }){
+function Card( { pokemonNumber, onClick }){
   const [pokemonName, setPokemonName] = useState("");
   const [pokemonImage, setPokemonImage] = useState("");
   const [isLoading, setIsLoading] = useState(true);
@@ -27,7 +27,7 @@ function Card( { pokemonNumber }){
 
   return(
     <div className="card">
-      <button type="button" className="clickable-card">
+      <button type="button" className="clickable-card" onClick={onClick}>
         {isLoading ? (
           <>
             <p>loading</p>

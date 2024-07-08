@@ -7,7 +7,7 @@ function GameArea({ incrementScore, setCurrentScore }) {
   const [randomNumber, setRandomNumbers] = useState([]);
   const [isGameOver, setGameOver] = useState(false);
   const clickedCards = useRef(new Set());
-  let cardNumber = 5;
+  const [cardNumber, setCardNumber] = useState(5);
 
   useEffect(() => {
     const numbers = getRandomUniqueNumbers(1, 1025, cardNumber);
@@ -27,17 +27,17 @@ function GameArea({ incrementScore, setCurrentScore }) {
   };
 
   const resetGame = () => {
-    cardNumber = 5;
+    setCardNumber(5);
     setCurrentScore(0);
-    resetCards();
+    resetCards(cardNumber);
     setGameOver(false);
   };
 
   const handleClickedCards = (number) => {
     clickedCards.current.add(number);
     if (clickedCards.current.size === randomNumber.length) {
-      cardNumber += 5;
-      resetCards();
+      setCardNumber(cardNumber+5)
+      resetCards(cardNumber);
     }
   };
 

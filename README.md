@@ -1,8 +1,5 @@
-# React + Vite
+# Pokemon Memory Card
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+## Description
 
-Currently, two official plugins are available:
-
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react/README.md) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+This Memory game uses PokeAPI to generate clickable cards. The cards shuffle after each click. If the user clicks the same card twice the game is over. On the other hand if the user clears a board, the number of cards will increase by 5. A high score is saved locally, to keep track of progress and adds competitiveness.
